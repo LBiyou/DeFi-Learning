@@ -30,19 +30,19 @@ $$
 y'_1 = \frac {k} {x_0 + \Delta x} \tag{1}
 $$
 
-如果 userB 使用$ {\Delta x}$ 数量 的 TokenA 去兑换 TokenB，有
+如果 userB 使用 ${\Delta x}$  数量 的 TokenA 去兑换 TokenB，有
 
 $$
 y'_2 = \frac {k} {x_0 + \Delta x + \Delta x} \tag{2}
 $$
 
 
-不难看出 ${y'_2}$的值肯定是要比${y'_1}$的值要小的，从而反映出 TokenB的价格升高了。
+不难看出 ${y'_2}$ 的值肯定是要比 ${y'_1}$ 的值要小的，从而反映出 TokenB的价格升高了。
 
 
 这是因为 TokenA 的数量变多了，即使 userB 和 userA 的 TokenA 数量相同，那么后来者的 TokenA 将会对池子中TokenA的数量影响将会被削弱，即池子TokenA的数量将不会受到同样大幅度的影响。
 
-举个例子，假如ETH/DAI池子中的资金为：$ETH(100):DAI(10000)，K = 100 * 10000 = 1e6$
+举个例子，假如ETH/DAI池子中的资金为：${ETH(100):DAI(10000)，K = 100 * 10000 = 1e6}$
 
 $$
 state_0: K = 1e6, ETH=100, DAI=10000
