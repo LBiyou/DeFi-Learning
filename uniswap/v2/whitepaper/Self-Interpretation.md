@@ -22,16 +22,15 @@ UNISWAP 围绕着 `x * y = k` 这个恒定乘积执行代币的`swap`操作。
 $$
 x * y = k  \tag{恒定乘积AMM}
 $$
-推理过程：
+如果 userA 使用 ${\Delta x}$ 数量 的 TokenA 去兑换 TokenB，有
 $$
-假设 TokenA 数量为 x_0， TokenB 数量为y_0，且交易池中具有一定的流动性。
 \\
-如果 userA 使用 {\Delta x} 数量 的 TokenA 去兑换 TokenB，有
+
 \\
 y'_1 = \frac {k} {x_0 + \Delta x} \tag{1}
 $$
+如果 userB 使用$ {\Delta x}$ 数量 的 TokenA 去兑换 TokenB，有
 $$
-如果 userB 使用 {\Delta x} 数量 的 TokenA 去兑换 TokenB，有
 \\
 y'_2 = \frac {k} {x_0 + \Delta x + \Delta x} \tag{2}
 $$
