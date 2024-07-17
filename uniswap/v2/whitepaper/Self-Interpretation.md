@@ -19,19 +19,19 @@
 #### swap导致价格波动的原因
 
 UNISWAP 围绕着 `x * y = k` 这个恒定乘积执行代币的`swap`操作。
+
 $$
 x * y = k  \tag{恒定乘积AMM}
 $$
-如果 userA 使用 ${\Delta x}$ 数量 的 TokenA 去兑换 TokenB，有
-$$
-\\
 
-\\
+如果 userA 使用 ${\Delta x}$ 数量 的 TokenA 去兑换 TokenB，有
+
+$$
 y'_1 = \frac {k} {x_0 + \Delta x} \tag{1}
 $$
 如果 userB 使用$ {\Delta x}$ 数量 的 TokenA 去兑换 TokenB，有
+
 $$
-\\
 y'_2 = \frac {k} {x_0 + \Delta x + \Delta x} \tag{2}
 $$
 
