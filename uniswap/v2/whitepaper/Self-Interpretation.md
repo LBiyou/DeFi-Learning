@@ -1,4 +1,22 @@
-### swap导致价格波动的原因
+## 深入解读 Uniswap V2 白皮书
+
+### 引言
+
+本文主要记录我个人对 uniswap v2 白皮书的解读，水平有限难免有错误之处，欢迎斧正。
+
+旨在深入理解其中的数学原理，从而帮助进一步理解 代码的实现。
+
+文章按照白皮书的目录进行解读，其中会加入一些个人的理解和思考。
+
+### Uniswap-V2 Core
+
+#### 1.  Introduction
+
+
+
+### 文章延伸
+
+#### swap导致价格波动的原因
 
 UNISWAP 围绕着 `x * y = k` 这个恒定乘积执行代币的`swap`操作。
 $$
@@ -53,3 +71,8 @@ state_2: K = 1e6, ETH=120, DAI=8333.3
 \\
 userB也是使用10 ETH兑换 DAI，换出来的DAI要少于userA兑换的DAI，说明TokenB的价格变高了。
 $$
+TokenA 和 TokenB 在池中的数量变换关系为：
+
+![image-20240715142350886](Self-Interpretation/image-20240715142350886.png)
+
+![image-20240715142620934](Self-Interpretation/image-20240715142620934.png)
