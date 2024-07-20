@@ -241,6 +241,8 @@ Uniswap v2包含一个0.05%的协议手续费开关。如果打开，该手续�
 
 > 在理解白皮书的公式之前，需要提前知道收取手续费的方式。
 >
+> 参考资料：[link](https://www.bilibili.com/video/BV1nw4m1Q7hd/?spm_id_from=333.788&vd_source=7905ca4d33f9e55dec19fa0b64248cc2)。
+>
 > 1. 通过增发share的方式把手续费给项目方（即lp持有的lp的价值不变，手续费全给项目方[`feeTo`]）
 >
 > 2. 不增发share，让原来的share更值钱（由于手续费的积累，池子越来越深，share也更值钱了）。
