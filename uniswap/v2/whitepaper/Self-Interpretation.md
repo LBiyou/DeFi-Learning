@@ -555,4 +555,4 @@ TokenA 和 TokenB 在池中的数量变换关系为：
 
 ### 参考资料
 
-- [link1](https://github.com/adshao/publications/blob/master/README.md)
+- [link1](https://mirror.xyz/adshao.eth/qmzSfrOB8s6_-s1AsflYNqEkTynShdpBE0EliqjGC1U)
