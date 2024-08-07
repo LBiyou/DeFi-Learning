@@ -79,7 +79,7 @@ Uniswap v2 允许流动性提供者为任意两个 ERC-20 创建配对合约。
 在时间点 $t$ 由Uniswap提供的边际价格（不包含手续费）可以通过代币a和代币b的数量相除得出：
 
 $$
-p_t = \frac {r ^ a_t} {r ^b_t} \tag{1}
+p_t = \frac {r ^ a_t} {r ^ b_t} \tag{1}
 $$
 
 当Uniswap提供的价格不正确时，套利者可以在Uniswap交易套利（通过足够数量代币以支付手续费），因此Uniswap提供的代币价格将跟随市场价格。这意味着Uniswap提供的代币价格可以作为一种近似的价格预言机。
@@ -119,7 +119,7 @@ $$
 > * 算数平均数 Arithematic Mean
 >
 > $$
-> A(x_1,...,x_n) = \frac{1}{n}(x_1 + ... + x_n) 
+> A(x_1,...,x_n) = \frac{1}{n}(x_1 + ... + x_n)
 > $$
 >
 > * 几何平均数 Geometric Mean
@@ -268,19 +268,19 @@ $$
 使用公式（4）替换 $f_{1,2}$ ，经过计算可以得出 $s_m$ 为：
 
 $$
-s_m = \frac{\sqrt{k_2} - \sqrt{k_1}}{(\frac{1}{\phi} - 1) \cdot \sqrt{k_2} + \sqrt{k_1}} \cdot s_1 \tag {6}
+s_m = \frac{\sqrt{k_2} - \sqrt{k_1}}{(\frac{1}{\phi} - 1) \cdot \sqrt{k_2} + \sqrt{k_1}} \cdot s_1 \tag{6}
 $$
 
 使用 $\frac{1}{6}$ 替换其中的比例部分，可得：
 
 $$
-s_m = \frac{\sqrt{k_2} - \sqrt{k_1}}{5 \cdot \sqrt{k_2} + \sqrt{k_1}} \cdot s_1 \tag {7}
+s_m = \frac{\sqrt{k_2} - \sqrt{k_1}}{5 \cdot \sqrt{k_2} + \sqrt{k_1}} \cdot s_1 \tag{7}
 $$
 
 假设初始流动性提供者存入100 DAI和1 ETH，获得10个流动性代币。一段时间后（假设没有其他流动性提供者），当feeTo希望取出协议手续费时，两种代币余额分别为96 DAI和1.5 ETH。分别代入公式（7）可得：
 
 $$
-s_m = \frac{\sqrt{1.5 \cdot 96} - \sqrt{1 \cdot 100}}{5 \cdot \sqrt{1.5 \cdot 96} + \sqrt{1 \cdot 100}} \cdot 10 \approx 0.0286 \tag {8}
+s_m = \frac{\sqrt{1.5 \cdot 96} - \sqrt{1 \cdot 100}}{5 \cdot \sqrt{1.5 \cdot 96} + \sqrt{1 \cdot 100}} \cdot 10 \approx 0.0286 \tag{8}
 $$
 
 #### 2.5 Meta transactions for pool shares
