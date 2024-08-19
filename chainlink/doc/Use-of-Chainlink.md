@@ -47,9 +47,86 @@ date: 2024-03-01 12:00:00
 
 采用代理模式，便于合约的升级。
 
-使用流程如图所示：
+使用流程如下：
 
 ![image-20240819160819939](Use-of-Chainlink/image-20240819160819939.png)
 
+**应用案例**
+
+![image-20240819162942690](Use-of-Chainlink/image-20240819162942690.png)
+
 #### Reproduction
+
+**Tools:** Foundry，**Env：** Sepolia。
+
+**Data Source:** https://docs.chain.link/data-feeds/price-feeds/addresses
+
+**Step:**
+
+- step1: 初始化项目
+
+```shell
+forge init
+```
+
+-  step2：拉取相关库
+
+```shell
+forge install https://github.com/smartcontractkit/chainlink --no-commit
+```
+
+- step3: 修改配置文件[create remappings]：write=> @chainlink/contracts=lib/chainlink/contracts
+- step4: write smart contracts，查询当前比特币的价格
+
+查询合约：
+
+````solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
+
+contract PriceFeed {
+    AggregatorV3Interface priceFeed;
+
+    constructor() {
+        priceFeed = AggregatorV3Interface(
+            0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43
+        );
+    }
+
+    function getPrice() public view returns (int256 price) {
+        (, price, , , ) = priceFeed.latestRoundData();
+    }
+}
+
+````
+
+部署合约：
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "forge-std/Script.sol";
+import "../src/DataFeed.sol";
+
+contract DeployDataFeed is Script {
+    function run() external returns(PriceFeed priceFeed) {
+        vm.startBroadcast();
+        priceFeed = new PriceFeed();
+        vm.stopBroadcast();
+    }
+}
+```
+
+执行查询操作：
+
+```shell
+cast to-dec $(cast call 0x9AC6521008b6Cf909b0360db0B6819bBa895D559 "getPrice()" --rpc-url $env:s_rpc --private-key $env:s_pk)
+```
+
+![image-20240819173927296](Use-of-Chainlink/image-20240819173927296.png)
+
+#### Effect
 
